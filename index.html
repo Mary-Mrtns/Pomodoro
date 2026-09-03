@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+
+    <!-- Fonte pixel art importada do goodle fonts -->
+     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+     <!-- Link para o arquivo CSS separado -->
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>
+            POMODORO 
+            <div class="header-buttons">
+                <button class="btn-header" onclick="togglePanel('stats-panel')" title="Histórico">LOG</button>
+                <button class="btn-header" onclick="togglePanel('settings-panel')" title="Configurações">OPT</button>
+            </div>
+        </h1>
+
+        <!-- Painel de configuração de tempo -->
+         <div class="panel" id="settings-panel">
+            <div class="settings-row">
+                <label>FOCO (MIN):</label>
+                <input type="number" id="input-foco" value="25" min="1">
+            </div>
+            <div class="settings-row">
+                <label>PAUSA CURTA:</label>
+                <input type="number" id="input-curta" value="5" min="1">
+            </div>
+            <div class="settings-row">
+                <label>PAUSA LONGA:</label>
+                <input type="number" id="input-longa" value="15" min="1">
+            </div>
+            <button class="btn-panel btn-save" onclick="saveSettings()">SALVAR</button>
+         </div>
+    </div>
+</body>
+</html>
