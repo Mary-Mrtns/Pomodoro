@@ -37,7 +37,31 @@
                 <input type="number" id="input-longa" value="15" min="1">
             </div>
             <button class="btn-panel btn-save" onclick="saveSettings()">SALVAR</button>
-         </div>
+        </div>
+
+        <!-- Painel de histórico (LOG) -->
+        <div class="panel" id="stats-panel">
+            <div style="text-align: center; margin-bottom: 10px; font-size: 12px;">TEMPO FOCADO</div>
+            <ul class="stats-list" id="stats-list">
+                <!-- Os dados salvos aparecerão aqui -->
+            </ul>
+            <button class="btn-panel btn-clear" onclick="clearStats()">APAGAR SAVE</button>
+        </div>
+
+        <!-- Seleção de modos -->
+        <div class="modes">
+            <button id="btn-foco" class="active" onclick="setMode('foco')">FOCO</button>
+            <button id="btn-curta" onclick="setMode('curta')">CURTA</button>
+            <button id="btn-longa" onclick="setMode('longa')">LONGA</button>
+        </div>
+
+        <!-- Display do tempo -->
+        <div class="time-display" id="time">25:00</div>
+
+        <!-- Barra de progresso visual pixelada -->
+        <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="progress-fill"></div>
+        </div>
     </div>
 </body>
 </html>
