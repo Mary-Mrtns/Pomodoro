@@ -10,7 +10,7 @@ A técnica Pomodoro ajuda a organizar o tempo de estudo/trabalho em ciclos de fo
 
 ##  Progresso
 
-- [ ] Estrutura HTML básica
+- [x] Estrutura HTML básica
 - [ ] Estilização (CSS)
 - [ ] Lógica do timer (JavaScript)
 - [ ] Botões de iniciar / pausar / resetar
