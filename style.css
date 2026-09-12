@@ -106,3 +106,41 @@ h1 {
     transform: translate(4px, 4px);
     box-shadow: 0px 0px 0px #000;
 }
+
+/* Lista de Histórico (LOG) */
+.stats-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+.stats-list li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px dashed #ccc;
+    padding: 8px 0;
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+/* Botões de Modo (Foco, Pausas) */
+.modes { margin-bottom: 15px; }
+
+.modes button {
+    background: #fff;
+    border: 3px solid transparent;
+    color: #888;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 9px;
+    margin: 0 2px;
+    cursor: pointer;
+    padding: 8px 6px;
+}
+
+.modes button.active {
+    color: #000;
+    border: 3px solid #000;
+    background-color: #e0e0e0;
+}
