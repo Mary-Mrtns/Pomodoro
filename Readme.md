@@ -11,9 +11,9 @@ A técnica Pomodoro ajuda a organizar o tempo de estudo/trabalho em ciclos de fo
 ##  Progresso
 
 - [x] Estrutura HTML básica
-- [ ] Estilização (CSS) - Em andamento 
+- [X] Estilização (CSS) - Em andamento 
 - [ ] Lógica do timer (JavaScript)
-- [ ] Botões de iniciar / pausar / resetar
+- [X] Botões de iniciar / pausar / resetar
 - [ ] Alternância entre ciclos de foco e descanso
 - [ ] Notificação sonora ou visual ao final do ciclo
 - [ ] Ajustes finais de responsividade
