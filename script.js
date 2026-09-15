@@ -27,4 +27,31 @@ function setMode(mode) {
     currentMode = mode;
     totalTimeInSeconds = modes[mode].minutes * 60;
     timeLeft = totalTimeInSeconds;
+
+    const color = modes[mode].color;
+    document.body.style.backgroundColor = color;
+    document.getElementById('progress-fill').style.backgroundColor = color;
+
+    document.querySelectorAll('.modes button').forEach(btn => btn.classList.remove('active'));
+    document.getElementById(`btn-${mode}`).classList.add('active');
+
+    updateDisplay();
+}
+
+function startTimer() {
+    if (timerId !== null) return;
+
+    timerId = setInterval(() => {
+        timeLeft--;
+        updateDisplay();
+
+        if (timeLeft <= 0) {
+            clearInterval(timerId);
+            timerId = null;
+
+            if (currentMode === 'foco') {
+                saveSessionDate(modes.foco.minutes * 60);
+            }
+        }
+    })
 }
