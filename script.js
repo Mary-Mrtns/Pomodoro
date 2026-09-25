@@ -151,7 +151,7 @@ function togglePanel(panelId) {
 }
 
 function saveSettings() {
-    const novoFoco = Math.max(1, document.getElementById('input-foco').valeu);
+    const novoFoco = Math.max(1, document.getElementById('input-foco').value);
     const novaCurta = Math.max(1, document.getElementById('input-curta').value);
     const novaLonga = Math.max(1, document.getElementById('input-longa').value);
 
