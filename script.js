@@ -125,3 +125,83 @@ function carregarStats() {
         statsList.appendChild(li);
     });
 }
+
+function clearStats() {
+    if (confirm("DELETAR TODO O SEU SAVE DE FOCO?")) {
+        localStorage.removeItem('pomodoro_save');
+        carregarStats();
+    }
+}
+
+// --- LÓGICA DE PAINEIS ---
+
+function togglePanel(panelId) {
+    // Fecha os dois paineis antes
+    const isAtivo = document.getElementById(panelId).classList.contains('active');
+    document.getElementById('settings-panel').classList.remove('active');
+    document.getElementById('stats-panel').classList.remove('active');
+
+    // Se não estava ativo antes, abre ele
+    if (!isAtivo) {
+        document.getElementById(panelId).classList.add('active');
+        if (panelId === 'stats-panel') {
+            carregarStats(); // Carrega o histórico mais atualizado
+        }
+    }
+}
+
+function saveSettings() {
+    const novoFoco = Math.max(1, document.getElementById('input-foco').valeu);
+    const novaCurta = Math.max(1, document.getElementById('input-curta').value);
+    const novaLonga = Math.max(1, document.getElementById('input-longa').value);
+
+    modes.foco.minutes = novoFoco;
+    modes.curta.minutes = novaCurta;
+    modes.longa.minutes = novaLonga;
+
+    togglePanel('settings-panel');
+    totalTimeInSeconds = modes[currentMode].minutes * 60;
+    resetTimer();
+}
+
+// --- LÓGICA DA LISTA DE TAREFAS (QUESTS) ---
+
+function addTask() {
+    const input = document.getElementById('task-input');
+    const taskText = input.value.trim();
+    if (taskText === '') return;
+
+    const taskList = document.getElementById('task-list');
+    const li = document.createElement('li');
+    li.className = 'task-item';
+
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.onclick = function() {
+        if (checkbox.checked) li.classList.add('completed');
+        else li.classList.remove('completed');
+    };
+
+    const span = document.createElement('span');
+    span.textContent = taskText;
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.innerHTML = 'X';
+    deleteBtn.className = 'btn-delete-task';
+    deleteBtn.onclick = function() { taskList.removeChild(li); };
+
+    li.appendChild(checkbox);
+    li.appendChild(span);
+    li.appendChild(deleteBtn);
+    taskList.appendChild(li);
+
+    input.value = '';
+}
+
+function handleKeyPress(event) {
+    if (event.key === 'Enter') addTask();
+}
+
+// Inicializa o app ao carregar a página
+setMode('foco');
+carregarStats();
