@@ -38,7 +38,7 @@ Além do timer, o site conta com um sistema de tarefas integrado, permitindo org
 
 Ou acesse direto pelo GitHub Pages: `https://mary-mrtns.github.io/Pomodoro/`
 
-## Tecnologias Usadas
+## Tecnologias 
 
 - **HTML5** — estrutura da página
 - **CSS3** — estilização, responsividade e animações
